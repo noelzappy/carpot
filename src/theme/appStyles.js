@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
-import { FontSize, Colors } from './Variables'
+import { FontSize, Colors, Sizes } from './Variables'
 
-export const textSizes = StyleSheet.create({
+export const TextSizes = StyleSheet.create({
   textSmall: {
     fontSize: FontSize.small,
     color: Colors.text,
@@ -43,7 +43,7 @@ export const textSizes = StyleSheet.create({
   },
 })
 
-export const commonStyles = StyleSheet.create({
+export const Common = StyleSheet.create({
   backgroundPrimary: {
     backgroundColor: Colors.primary,
   },
@@ -61,5 +61,162 @@ export const commonStyles = StyleSheet.create({
   },
   backgroundWhite: {
     backgroundColor: Colors.white,
+  },
+  rounded: {
+    borderRadius: 10,
+  },
+})
+
+export const Gutters = StyleSheet.create({
+  ...Object.entries(Sizes).reduce(
+    (acc, [key, value]) => ({
+      ...acc,
+      /* Margins */
+      [`${key}BMargin`]: {
+        marginBottom: value,
+      },
+      [`${key}TMargin`]: {
+        marginTop: value,
+      },
+      [`${key}RMargin`]: {
+        marginRight: value,
+      },
+      [`${key}LMargin`]: {
+        marginLeft: value,
+      },
+      [`${key}VMargin`]: {
+        marginVertical: value,
+      },
+      [`${key}HMargin`]: {
+        marginHorizontal: value,
+      },
+      /* Paddings */
+      [`${key}BPadding`]: {
+        paddingBottom: value,
+      },
+      [`${key}TPadding`]: {
+        paddingTop: value,
+      },
+      [`${key}RPadding`]: {
+        paddingRight: value,
+      },
+      [`${key}LPadding`]: {
+        paddingLeft: value,
+      },
+      [`${key}VPadding`]: {
+        paddingVertical: value,
+      },
+      [`${key}HPadding`]: {
+        paddingHorizontal: value,
+      },
+      [`${key}Padding`]: {
+        padding: value,
+      },
+      [`${key}Margin`]: {
+        margin: value,
+      },
+    }),
+    {},
+  ),
+})
+
+export const Layout = StyleSheet.create({
+  /* Column Layouts */
+  column: {
+    flexDirection: 'column',
+  },
+  columnReverse: {
+    flexDirection: 'column-reverse',
+  },
+  colCenter: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  colVCenter: {
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  colHCenter: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
+  /* Row Layouts */
+  row: {
+    flexDirection: 'row',
+  },
+  rowReverse: {
+    flexDirection: 'row-reverse',
+  },
+  rowCenter: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  rowVCenter: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  rowHCenter: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  /* Default Layouts */
+  center: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  alignItemsCenter: {
+    alignItems: 'center',
+  },
+  alignItemsStart: {
+    alignItems: 'flex-start',
+  },
+  alignItemsStretch: {
+    alignItems: 'stretch',
+  },
+  justifyContentCenter: {
+    justifyContent: 'center',
+  },
+  justifyContentAround: {
+    justifyContent: 'space-around',
+  },
+  justifyContentBetween: {
+    justifyContent: 'space-between',
+  },
+  scrollSpaceAround: {
+    flexGrow: 1,
+    justifyContent: 'space-around',
+  },
+  scrollSpaceBetween: {
+    flexGrow: 1,
+    justifyContent: 'space-between',
+  },
+  selfStretch: {
+    alignSelf: 'stretch',
+  },
+  /* Sizes Layouts */
+  fill: {
+    flex: 1,
+  },
+  fullSize: {
+    height: '100%',
+    width: '100%',
+  },
+  fullWidth: {
+    width: '100%',
+  },
+  fullHeight: {
+    height: '100%',
+  },
+  /* Operation Layout */
+  mirror: {
+    transform: [{ scaleX: -1 }],
+  },
+  rotate90: {
+    transform: [{ rotate: '90deg' }],
+  },
+  rotate90Inverse: {
+    transform: [{ rotate: '-90deg' }],
   },
 })

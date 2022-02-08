@@ -10,6 +10,7 @@ export default {
     addSparePartInformation:
       'Provide information about the required spare part',
     loginHeading: 'Enter your login phone number',
+    spareParts: 'Spare Parts',
     labels: {
       phoneNumber: 'Enter Phone Number',
       email: 'Enter Email',
@@ -18,5 +19,9 @@ export default {
       facebook: 'Login With Facebook',
       google: 'Login With Google',
     },
+    transport: 'Transport',
+    contact: 'Contact',
+    sndRequest: 'Send Request',
+    step1: 'Step 1 of 3',
   },
 }

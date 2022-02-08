@@ -52,7 +52,7 @@ const tiny = 5 // 10
 const small = tiny * 2 // 10
 const regular = tiny * 3 // 15
 const large = regular * 2 // 30
-export const MetricsSizes = {
+export const Sizes = {
   tiny,
   small,
   regular,
@@ -63,5 +63,5 @@ export default {
   Colors,
   NavigationColors,
   FontSize,
-  MetricsSizes,
+  Sizes,
 }

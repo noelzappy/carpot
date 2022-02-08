@@ -1,5 +1,7 @@
 import * as Font from 'expo-font'
 
+
+
 // fonts preloading
 export const fontAssets = [
   {

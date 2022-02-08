@@ -7,7 +7,7 @@ import Chat from '../../screens/Chat'
 import Home from '../../screens/Home'
 import Shop from '../../screens/Shop'
 import Profile from '../../screens/Profile'
-import Colors from '../../theme/colors'
+import { Colors } from '../../theme/Variables'
 
 const Tab = createBottomTabNavigator()
 

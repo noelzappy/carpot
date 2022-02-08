@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { Text } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
 import { authenticate } from 'slices/app.slice'
-
+import { SafeAreaView } from 'react-native-safe-area-context'
 import DrawerNavigator from './Drawer'
 
 const Navigator = () => {
@@ -18,11 +18,23 @@ const Navigator = () => {
   console.log('[##] loggedIn', loggedIn)
 
   return checked ? (
-    <NavigationContainer>
-      <DrawerNavigator />
-    </NavigationContainer>
+    <SafeAreaView
+      style={{
+        flex: 1,
+      }}
+    >
+      <NavigationContainer>
+        <DrawerNavigator />
+      </NavigationContainer>
+    </SafeAreaView>
   ) : (
-    <Text>Loading...</Text>
+    <SafeAreaView
+      style={{
+        flex: 1,
+      }}
+    >
+      <Text>Loading...</Text>
+    </SafeAreaView>
   )
 }
 

@@ -1,59 +1,57 @@
 import React from 'react'
-import { View } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import FontIcon from 'react-native-vector-icons/FontAwesome5'
-import { colors } from 'theme'
+import { AntDesign, Ionicons, Fontisto } from '@expo/vector-icons'
 
-// stack navigators
-import { HomeNavigator, ProfileNavigator } from '../Stacks'
+import AddItem from '../../screens/AddItem'
+import Chat from '../../screens/Chat'
+import Home from '../../screens/Home'
+import Shop from '../../screens/Shop'
+import Profile from '../../screens/Profile'
+import Colors from '../../theme/colors'
 
 const Tab = createBottomTabNavigator()
 
 const TabNavigator = () => (
   <Tab.Navigator
     screenOptions={({ route }) => ({
-      // eslint-disable-next-line react/prop-types
-      tabBarIcon: ({ focused }) => {
+      tabBarIcon: ({ focused, color, size }) => {
+        let tabIcon
         switch (route.name) {
-          case 'Home':
-            return (
-              <FontIcon
-                name="home"
-                color={focused ? colors.lightPurple : colors.gray}
-                size={20}
-                solid
-              />
+          case 'HomeScreen':
+            tabIcon = <AntDesign name="home" size={size} color={color} />
+            break
+          case 'ProfileScreen':
+            tabIcon = (
+              <Ionicons name="person-circle" size={size} color={color} />
             )
-          case 'Profile':
-            return (
-              <FontIcon
-                name="user"
-                color={focused ? colors.lightPurple : colors.gray}
-                size={20}
-                solid
-              />
-            )
+            break
+          case 'ChatScreen':
+            tabIcon = <Fontisto name="comments" size={size} color={color} />
+            break
+          case 'ShopScreen':
+            tabIcon = <AntDesign name="profile" size={size} color={color} />
+            break
+          case 'AddItemScreen':
+            tabIcon = <Ionicons name="add-circle" size={size} color={color} />
+            break
           default:
-            return <View />
+            break
         }
+
+        return tabIcon
       },
+      tabBarLabelStyle: {
+        display: 'none',
+      },
+      headerShown: false,
+      tabBarActiveTintColor: Colors.primary,
     })}
-    tabBarOptions={{
-      activeTintColor: colors.lightPurple,
-      inactiveTintColor: colors.gray,
-      style: {
-        // backgroundColor: 'white',
-        // borderTopColor: 'gray',
-        // borderTopWidth: 1,
-        // paddingBottom: 5,
-        // paddingTop: 5,
-      },
-    }}
-    initialRouteName="Home"
-    swipeEnabled={false}
   >
-    <Tab.Screen name="Home" component={HomeNavigator} />
-    <Tab.Screen name="Profile" component={ProfileNavigator} />
+    <Tab.Screen name="HomeScreen" component={Home} />
+    <Tab.Screen name="ChatScreen" component={Chat} />
+    <Tab.Screen name="AddItemScreen" component={AddItem} />
+    <Tab.Screen name="ShopScreen" component={Shop} />
+    <Tab.Screen name="ProfileScreen" component={Profile} />
   </Tab.Navigator>
 )
 

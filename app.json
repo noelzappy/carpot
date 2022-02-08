@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "react-native-boilerplate",
-    "slug": "react-native-boilerplate",
+    "name": "Carpot",
+    "slug": "capot",
     "privacy": "public",
     "platforms": ["ios", "android", "web"],
     "version": "1.0.0",

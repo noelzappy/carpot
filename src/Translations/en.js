@@ -23,5 +23,8 @@ export default {
     contact: 'Contact',
     sndRequest: 'Send Request',
     step1: 'Step 1 of 3',
+    step2: 'Step 2 of 3',
+    step3: 'Step 3 of 3',
+    sparePartInfo: 'Provide information about the required spare part',
   },
 }

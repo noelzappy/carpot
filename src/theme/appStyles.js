@@ -62,6 +62,9 @@ export const Common = StyleSheet.create({
   backgroundWhite: {
     backgroundColor: Colors.white,
   },
+  backgroundGray: {
+    backgroundColor: Colors.grayFour,
+  },
   rounded: {
     borderRadius: 10,
   },
@@ -111,9 +114,6 @@ export const Gutters = StyleSheet.create({
       },
       [`${key}Padding`]: {
         padding: value,
-      },
-      [`${key}Margin`]: {
-        margin: value,
       },
     }),
     {},

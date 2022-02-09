@@ -1,7 +1,9 @@
 import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import i18n from 'i18n-js'
-import { Ionicons } from '@expo/vector-icons'
+import { Ionicons, AntDesign } from '@expo/vector-icons'
+import { Button, LinearProgress } from 'react-native-elements'
+
 import NavHeader from '../components/NavHeader'
 import { appStyles, Colors, Sizes } from '../theme'
 const { TextSizes, Gutters, Common, Layout } = appStyles
@@ -36,7 +38,7 @@ const AddItem = ({ navigation }) => {
         </View>
 
         <View style={[Layout.row, Layout.justifyContentBetween]}>
-          <TouchableOpacity>
+          <TouchableOpacity activeOpacity={0.8}>
             <View style={styles.itemIcons}>
               <Ionicons
                 name="settings"
@@ -47,7 +49,7 @@ const AddItem = ({ navigation }) => {
             <Text>1. {t('lang.spareParts')}</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity>
+          <TouchableOpacity activeOpacity={0.8}>
             <View style={styles.itemIcons}>
               <Ionicons
                 name="ios-car-sport"
@@ -57,7 +59,7 @@ const AddItem = ({ navigation }) => {
             </View>
             <Text>2. {t('lang.transport')}</Text>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity activeOpacity={0.8}>
             <View style={styles.itemIcons}>
               <Ionicons
                 name="md-person-sharp"
@@ -67,6 +69,26 @@ const AddItem = ({ navigation }) => {
             </View>
             <Text>3. {t('lang.contact')}</Text>
           </TouchableOpacity>
+        </View>
+        <View style={[Gutters.smallTMargin]}>
+          <Text style={[TextSizes.textRegular]}>{t('lang.step1')}</Text>
+          <LinearProgress
+            style={{ marginVertical: 10 }}
+            value={0.3}
+            color={Colors.primary}
+            trackColor={Colors.grayFour}
+            variant="determinate"
+          />
+        </View>
+
+        <View style={[Layout.row]}>
+          <AntDesign
+            name="infocirlceo"
+            size={20}
+            color={Colors.blackOne}
+            style={[Gutters.smallRMargin]}
+          />
+          <Text style={[TextSizes.textSmall]}>{t('lang.sparePartInfo')}</Text>
         </View>
       </View>
     </>

@@ -50,14 +50,13 @@ export const Common = StyleSheet.create({
   backgroundReset: {
     backgroundColor: Colors.transparent,
   },
-  textInput: {
+  textInputContainer: {
     borderColor: Colors.text,
     backgroundColor: Colors.inputBackground,
     color: Colors.text,
     minHeight: 50,
-    textAlign: 'center',
-    marginTop: 10,
-    marginBottom: 10,
+
+    marginTop: Sizes.tiny,
   },
   backgroundWhite: {
     backgroundColor: Colors.white,
@@ -67,6 +66,9 @@ export const Common = StyleSheet.create({
   },
   rounded: {
     borderRadius: 10,
+  },
+  labelText: {
+    color: Colors.grayThree,
   },
 })
 

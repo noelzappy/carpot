@@ -1,8 +1,8 @@
 import React from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, ScrollView } from 'react-native'
 import i18n from 'i18n-js'
 import { Ionicons, AntDesign } from '@expo/vector-icons'
-import { Button, LinearProgress } from 'react-native-elements'
+import { Button, CheckBox, Input, LinearProgress } from 'react-native-elements'
 
 import NavHeader from '../components/NavHeader'
 import { appStyles, Colors, Sizes } from '../theme'
@@ -21,7 +21,7 @@ const AddItem = ({ navigation }) => {
   const { t } = i18n
 
   return (
-    <>
+    <ScrollView style={[Layout.fill, Common.backgroundWhite]}>
       <NavHeader navigation={navigation} />
       <View
         style={[Gutters.regularHPadding, Common.backgroundWhite, { flex: 1 }]}
@@ -90,8 +90,140 @@ const AddItem = ({ navigation }) => {
           />
           <Text style={[TextSizes.textSmall]}>{t('lang.sparePartInfo')}</Text>
         </View>
+
+        <View style={[Gutters.largeTMargin]}>
+          <Input
+            label={t('lang.nameOfSparePart')}
+            containerStyle={[Common.textInputContainer]}
+            placeholder={`Enter ${t('lang.nameOfSparePart')}`}
+          />
+        </View>
+
+        <View style={[Gutters.smallTMargin]}>
+          <Input
+            label={t('lang.groupOfSpareParts')}
+            containerStyle={[Common.textInputContainer]}
+            placeholder={t('lang.enterGroupOfSparePart')}
+          />
+        </View>
+        <View>
+          <Text style={[Common.labelText]}>{t('lang.type')}</Text>
+          <View style={[Layout.row, Layout.justifyContentAround]}>
+            <CheckBox
+              title="Будь-який"
+              checkedIcon="dot-circle-o"
+              uncheckedIcon="circle-o"
+              checked
+              onPress={() => {}}
+              checkedColor={Colors.secondary}
+              containerStyle={{
+                backgroundColor: Colors.white,
+                borderWidth: 0,
+              }}
+            />
+            <CheckBox
+              title="Оригінал"
+              checkedIcon="dot-circle-o"
+              uncheckedIcon="circle-o"
+              checked={false}
+              onPress={() => {}}
+              checkedColor={Colors.secondary}
+              containerStyle={{
+                backgroundColor: Colors.white,
+                borderWidth: 0,
+              }}
+              uncheckedColor={Colors.secondary}
+            />
+            <CheckBox
+              title="Неоригінал"
+              checkedIcon="dot-circle-o"
+              uncheckedIcon="circle-o"
+              checked={false}
+              onPress={() => {}}
+              checkedColor={Colors.secondary}
+              containerStyle={{
+                backgroundColor: Colors.white,
+                borderWidth: 0,
+              }}
+              uncheckedColor={Colors.secondary}
+            />
+          </View>
+        </View>
+
+        <View>
+          <Text style={[Common.labelText]}> Стан</Text>
+          <View style={[Layout.row, Layout.justifyContentBetween]}>
+            <CheckBox
+              title="Будь-який"
+              checkedIcon="dot-circle-o"
+              uncheckedIcon="circle-o"
+              checked
+              onPress={() => {}}
+              checkedColor={Colors.secondary}
+              containerStyle={{
+                backgroundColor: Colors.white,
+                borderWidth: 0,
+              }}
+            />
+            <CheckBox
+              title="Нова"
+              checkedIcon="dot-circle-o"
+              uncheckedIcon="circle-o"
+              checked={false}
+              onPress={() => {}}
+              checkedColor={Colors.secondary}
+              containerStyle={{
+                backgroundColor: Colors.white,
+                borderWidth: 0,
+              }}
+              uncheckedColor={Colors.secondary}
+            />
+            <CheckBox
+              title="Б/У"
+              checkedIcon="dot-circle-o"
+              uncheckedIcon="circle-o"
+              checked={false}
+              onPress={() => {}}
+              checkedColor={Colors.secondary}
+              containerStyle={{
+                backgroundColor: Colors.white,
+                borderWidth: 0,
+              }}
+              uncheckedColor={Colors.secondary}
+            />
+          </View>
+        </View>
+        <View style={[Gutters.smallTMargin]}>
+          <Input
+            label="Додатковий опис"
+            containerStyle={[Common.textInputContainer]}
+            placeholder={`Enter ${t('lang.nameOfSparePart')}`}
+          />
+        </View>
+
+        <View
+          style={[
+            Gutters.smallMargin,
+            { backgroundColor: Colors.grayFive, maxWidth: Sizes.large * 4 },
+            Gutters.smallPadding,
+            Layout.alignItemsCenter,
+            Common.rounded,
+          ]}
+        >
+          <Text style={[TextSizes.textRegular]}>артикул</Text>
+        </View>
+        <View style={[Gutters.regularVMargin]}>
+          <Button
+            title="ПРОДОВЖИТИ"
+            buttonStyle={[
+              Gutters.regularVPadding,
+              Common.backgroundPrimary,
+              Common.rounded,
+            ]}
+          />
+        </View>
       </View>
-    </>
+    </ScrollView>
   )
 }
 

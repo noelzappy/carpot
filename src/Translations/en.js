@@ -26,5 +26,9 @@ export default {
     step2: 'Step 2 of 3',
     step3: 'Step 3 of 3',
     sparePartInfo: 'Provide information about the required spare part',
+    nameOfSparePart: 'Name of spare parts',
+    groupOfSpareParts: 'Group of spare parts',
+    enterGroupOfSparePart: 'Enter Group of spare parts',
+    type: 'Type',
   },
 }
